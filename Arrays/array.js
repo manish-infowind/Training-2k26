@@ -24,6 +24,10 @@ console.log(a);
  console.log(a.indexOf('Hitesh')); 
  //slice
  x=a.slice(2,5);
+//map
+var y=[1,2,3,4,5,6,7,8,9] 
+var z=y.map(n=>n%2==1)
+
 
 
 
