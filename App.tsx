@@ -1,74 +1,80 @@
-import "./App.css";
+import { useState, useEffect } from "react";
 
-function App() {
- 
-  const name = "Bhai";
-  const age = 21;
+export default function Form() {
 
-  const user = {
-    name: "mahima",
-    age: 22,
-    city: "Indore",
-  };
+  const [person, setPerson] = useState({
+    firstName: "mahima",
+    lastName: "raikwar",
+    email: "mahi@gmail.com"
+  });
 
  
-  const users = ["mahima", "harshita", "hitesh", "mahi"];
+  const [count, setCount] = useState(0);
+
+  const [show, setShow] = useState(true);
+
+ 
+  useEffect(() => {
+    console.log("Person updated:", person);
+  }, [person]);
 
   
-  function greet() {
-    alert("Hello Bhai");
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setPerson({
+      ...person,
+      [name]: value
+    });
   }
-
- 
-  function showName(n: string) {
-    alert("Hello " + n);
-  }
-
-
-  const isLoggedIn = true;
 
   return (
     <>
+      <h2>Form Example</h2>
+
+
+      {show && (
+        <>
+          <input
+            name="firstName"
+            value={person.firstName}
+            onChange={handleChange}
+            placeholder="First Name"
+          />
+
+          <input
+            name="lastName"
+            value={person.lastName}
+            onChange={handleChange}
+            placeholder="Last Name"
+          />
+
+          <input
+            name="email"
+            value={person.email}
+            onChange={handleChange}
+            placeholder="Email"
+          />
+        </>
+      )}
+
+      <button onClick={() => setShow(!show)}>
+        Toggle Form
+      </button>
+
      
-      <h1>Hello {name}</h1>
-      <p>Age: {age}</p>
+      <p>
+        {person.firstName} {person.lastName} ({person.email})
+      </p>
 
-      <h2>
-        {user.name} - {user.age} - {user.city}
-      </h2>
-
-      <button onClick={greet}>Click Me</button>
-      <button onClick={() => showName(name)}>Show Name</button>
+      <hr />
 
   
-      <h3>{isLoggedIn ? "Welcome" : "Please Login"}</h3>
-
-
-      <p>{isLoggedIn && "You are logged in"}</p>
-
-   
-      <ul>
-        {users.map((u, i) => (
-          <li key={i}>{u}</li>
-        ))}
-      </ul>
-
-
-      <div>
-        <p>Line 1</p>
-        <p>Line 2</p>
-        <p>Line 3</p>
-      </div>
-
-    
-      <p className="text">Styled Text</p>
+      <h3>Counter: {count}</h3>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
 
       
-      <p style={{ color: "blue", fontSize: "20px" }}>
-        Inline Styling
-      </p>
+      <button onClick={() => setCount(0)}>Reset</button>
     </>
   );
 }
-
-export default App;
