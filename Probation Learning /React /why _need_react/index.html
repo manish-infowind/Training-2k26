@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    .box {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    h2 {
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Counter App</h2>
+    <p id="count">Count; 0</p>
+    <button id="incBtn">Increment</button>
+    <button id="decBtn">Decrement</button>
+  </div>
+
+  <script>
+    let count = 0;
+
+    const countText = document.getElementById("count");
+    const incBtn = document.getElementById("incBtn");
+    const decBtn = document.getElementById("decBtn");
+
+    incBtn.addEventListener("click", function () {
+      count++;
+      countText.textContent = "Count: " + count;
+    });
+
+    decBtn.addEventListener("click", function () {
+      count--;
+      countText.textContent = "Count: " + count;
+    });
+  </script>
+</body>
+</html>

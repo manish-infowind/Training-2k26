@@ -1,0 +1,22 @@
+Vite is a **modern build tool** that helps you create and run React projects quickly. Think of it as a super-fast kitchen that prepares your React ingredients instantly!
+
+**Key Points:**
+- Created by the same person who made Vue.js
+- Extremely fast development server
+- Hot Module Replacement (HMR) - see changes instantly
+- Simple configuration
+- Works with React, Vue, Svelte, and more
+
+## 2. WHY → Why use Vite instead of Create React App?
+
+### Traditional Tools (Create React App):
+- **Slow startup**: Takes 30+ seconds to start
+- **Slow updates**: Changes take 2-5 seconds to appear
+- **Heavy**: Comes with lots of pre-installed stuff
+- **Old technology**: Uses Webpack
+
+### Vite Benefits:
+- **Lightning fast**: Starts in 1-2 seconds
+- **Instant updates**: Changes appear in milliseconds
+- **Lightweight**: Only includes what you need
+- **Modern**: Uses ES modules and native browser features
